@@ -1,0 +1,322 @@
+% Gemini theme
+% https://github.com/anishathalye/gemini
+
+% ====================
+% Dependencies
+% ====================
+
+\RequirePackage{exscale}
+\RequirePackage{ragged2e}
+\RequirePackage{changepage}
+\RequirePackage{fontspec}
+\usepackage{luatexja-fontspec}
+\RequirePackage{calc}
+
+% ====================
+% Fonts
+% ====================
+
+\newfontfamily\Hara[Ligatures=TeX]{HaranoAjiGothic-Regular}
+\newfontfamily\HaraBold[Ligatures=TeX]{HaranoAjiGothic-Bold}
+\newfontfamily\Lato[Ligatures=TeX]{HaranoAjiGothic-Regular}
+\newfontfamily\LatoBold[Ligatures=TeX]{HaranoAjiGothic-Bold}
+
+
+\setmainjfont[BoldFont=HaranoAjiGothic-Bold]{HaranoAjiGothic-Regular}
+\setsansjfont[BoldFont=HaranoAjiGothic-Bold]{HaranoAjiGothic-Regular}
+
+\newjfontfamily\jisninety[CJKShape=JIS1990]{HaranoAjiMincho-Regular}
+
+\usefonttheme{professionalfonts}
+
+
+\setbeamerfont{headline}{family=\Hara}
+\setbeamerfont{headline title}{size=\Huge,series=\bfseries}
+\setbeamerfont{headline author}{size=\Large}
+\setbeamerfont{headline institute}{size=\normalsize}
+\setbeamerfont{block title}{family=\HaraBold,size=\fontsize{40pt}{40pt},series=\bfseries}
+\setbeamerfont{block body}{family=\Hara,size=\fontsize{30pt}{45pt}}
+\setbeamerfont{heading}{family=\Lato,series=\bfseries}
+\setbeamerfont{caption}{size=\small}
+\setbeamerfont{footline}{family=\Hara,size=\normalsize}
+
+\setbeamerfont{block body example}{family=\ttfamily,size=\fontsize{34pt}{34pt}}
+
+\setbeamerfont{enumerate item}{series = \bfseries,size=\fontsize{30pt}{45pt}}
+\setbeamerfont{enumerate subitem}{series = \bfseries,size=\fontsize{30pt}{45pt}}
+
+\setbeamertemplate{itemize/enumerate body begin}{\fontsize{30pt}{45pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{\fontsize{30pt}{45pt}}
+
+
+
+% ====================
+% Macros
+% ====================
+
+\newcommand{\samelineand}{\qquad}
+
+% ====================
+% Elements
+% ====================
+
+% List
+\def\@listi{\leftmargin\leftmarginii
+\topsep 1ex % spacing before
+\parsep 0\p@ \@plus\p@
+\itemsep 0.5ex} % spacing between
+
+% Itemize
+
+\setbeamertemplate{itemize items}{\filledcircle}
+\newcommand{\okitem}{\item[\okmark]}
+\newcommand{\ngitem}{\item[\textcolor{alerted}{\ngmark}\hspace{0.1em}]}
+\newcommand{\thusitem}{\item[\textcolor{example_text_color}\thusmark]}
+\newcommand{\butitem}{\item[\textcolor{alerted}{\otherwisemark}\hspace{-0.1em}]}
+\newcommand{\annoitem}{\item[※]}
+\newcommand{\exitem}{\item[\textcolor{alerted_text_color!90}{\exmark}\hspace{0.1em}]}
+
+\newcommand*{\okmark}{\tikz[baseline=(char.base)]{\node(char)[]{};
+    \draw [line width = 4pt]
+    (0em, 0.25em) --++ (0.25em, -0.25em) --++ (0.55em, 0.55em); 
+  }
+}
+
+\newcommand*{\thusmark}{\tikz[baseline=(char.base)]{\node(char)[]{};
+    \draw [line width = 4pt]
+    (0em, 0.35em) --++ (0.8em, 0em);
+    \draw [line width = 4pt]
+    (0.45em, 0.0em) --++ (0.35em, 0.35em) --++ (-0.35em, 0.35em); 
+  }
+}
+
+\newcommand*{\filledcircle}{\tikz[baseline=(char.base)]{\node(char)[]{};
+    \fill [main] (0.3em, 0.3em) circle (0.2em); 
+  }
+}
+
+\newcommand*{\ngmark}{\tikz[baseline=(char.base)]{\node(char)[]{};
+    \draw [line width = 2.0pt]
+    (0em, 0.6em) --++ (0.6em, -0.6em);
+    \draw [line width = 2.0pt]
+    (0em, 0.0em) --++ (0.6em, 0.6em); 
+  }
+}
+
+\newcommand*{\otherwisemark}{\tikz[baseline=(char.base)]{\node(char)[]{};
+    \draw [line width = 2.0pt]
+    (0em, 0.3em) --++ (1.0em, 0em);
+    \draw [line width = 2.0pt]
+    (0.70em, 0.0em) --++ (0.30em, 0.30em) --++ (-0.30em, 0.30em); 
+    \draw [line width = 2.0pt]
+    (0.30em, 0.0em) --++ (-0.30em, 0.30em) --++ (0.30em, 0.30em); 
+  }
+}
+
+\newcommand*{\exmark}{\tikz[baseline=(char.base)]{\node(char)[]{};
+    \draw [line width = 4.5pt]
+    (0em, 0.27em) --++ (0em, 0.7em); 
+    \draw [line width = 4.5pt]
+    (0em, -0.1em) --++ (0em, 0.2em); 
+  }
+}
+% Enumerate
+
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamertemplate{enumerate subitem}{\insertsubenumlabel.}
+\setbeamertemplate{enumerate subsubitem}{\insertsubsubenumlabel.}
+
+% Equation
+\setlength\belowdisplayshortskip{2ex}
+
+% Caption
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}[period]
+\setlength{\abovecaptionskip}{2ex}
+\setlength{\belowcaptionskip}{1ex}
+
+% Bibliography
+\setbeamertemplate{bibliography item}[text]
+
+% Navigation
+\beamertemplatenavigationsymbolsempty
+
+% ====================
+% Components
+% ====================
+
+% Heading
+\newcommand\heading[1]
+{%
+  \par\bigskip
+  {\usebeamerfont{heading}\usebeamercolor[fg]{heading}#1}\par\smallskip
+}
+
+% logo
+\newlength{\logoleftwidth}
+\setlength{\logoleftwidth}{0cm}
+\newlength{\logorightwidth}
+\setlength{\logorightwidth}{0cm}
+\newlength{\maxlogowidth}  % space on both sides set to maxlogowidth to keep title centered
+\setlength{\maxlogowidth}{0cm}
+
+\newcommand{\logoright}[1]{
+  \newcommand{\insertlogoright}{#1}
+  \settowidth{\logorightwidth}{\insertlogoright}
+  \addtolength{\logorightwidth}{10ex}
+  \setlength{\maxlogowidth}{\maxof{\logoleftwidth}{\logorightwidth}}
+}
+\newcommand{\logoleft}[1]{
+  \newcommand{\insertlogoleft}{#1}
+  \settowidth{\logoleftwidth}{\insertlogoleft}
+  \addtolength{\logoleftwidth}{10ex}
+  \setlength{\maxlogowidth}{\maxof{\logoleftwidth}{\logorightwidth}}
+}
+
+% Headline
+\setbeamertemplate{headline}
+{
+  \begin{beamercolorbox}{headline}
+    \begin{columns}
+      \begin{column}{\maxlogowidth}
+        \vskip5ex
+        \ifdefined\insertlogoleft
+        \vspace*{\fill}
+        \hspace{10ex}
+        \raggedright
+        \insertlogoleft
+        \vspace*{\fill}
+        \else\fi
+      \end{column}
+      \begin{column}{\dimexpr\paperwidth-\maxlogowidth-\maxlogowidth}
+        \usebeamerfont{headline}
+        \vskip3ex
+        \centering
+        \ifx \inserttitle \empty \else
+        {\usebeamerfont{headline title}\usebeamercolor[fg]{headline title}\inserttitle\\[0.5ex]}
+        \fi
+        \ifx \beamer@shortauthor \empty \else
+        {\usebeamerfont{headline author}\usebeamercolor[fg]{headline author}\insertauthor\\[1ex]}
+        \fi
+        \ifx \insertinstitute \empty \else
+        {\usebeamerfont{headline institute}\usebeamercolor[fg]{headline institute}\insertinstitute\\[1ex]}
+        \fi
+      \end{column}
+      \begin{column}{\maxlogowidth}
+        \vskip5ex
+        \ifdefined\insertlogoright
+        \vspace*{\fill}
+        \raggedleft
+        \insertlogoright
+        \hspace{10ex}
+        \vspace*{\fill}
+        \else\fi
+      \end{column}
+    \end{columns}
+    \vspace{5ex}
+    \ifbeamercolorempty[bg]{headline rule}{}{
+      \begin{beamercolorbox}[wd=\paperwidth,colsep=0.5ex]{headline rule}\end{beamercolorbox}
+    }
+  \end{beamercolorbox}
+}
+
+% Block
+\setbeamertemplate{block begin}
+{
+  \begin{beamercolorbox}[colsep*=2.5mm,dp=2ex,center]{block title}
+    \vskip0.5em
+    \usebeamerfont{block title}\insertblocktitle
+    \vskip-0.5em
+    \begin{beamercolorbox}[colsep=0.025ex]{block separator}\end{beamercolorbox}
+  \end{beamercolorbox}
+  {\parskip0pt\par}
+  \usebeamerfont{block body}
+  \vskip-0.5ex
+  \begin{beamercolorbox}[colsep*=2.5mm]{block body}
+  \justifying
+  \begin{adjustwidth}{1ex}{1ex}
+  \setlength{\parskip}{1ex}
+  \vskip-1.5em %hoge
+}
+\setbeamertemplate{block end}
+{
+  \end{adjustwidth}
+  \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt
+  \vspace*{2ex}
+}
+
+% Alert Block
+\setbeamertemplate{block alerted begin}
+{
+  \begin{beamercolorbox}[colsep*=2.5mm,dp=2ex,center]{block alerted title}
+    \vskip0.5em
+    \usebeamerfont{block title}\insertblocktitle
+    \vskip-0.5em
+    \begin{beamercolorbox}[colsep=0.025ex]{block alerted separator}\end{beamercolorbox}
+  \end{beamercolorbox}
+  {\parskip0pt\par}
+  \usebeamerfont{block body}
+  \vskip-0.5ex
+  \begin{beamercolorbox}[colsep*=2.5mm]{block alerted body}
+  \justifying
+  \begin{adjustwidth}{1ex}{1ex}
+  \setlength{\parskip}{1ex}
+  \vskip-1.5em
+}
+\setbeamertemplate{block alerted end}
+{
+  \end{adjustwidth}
+  \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt
+  \vspace*{2ex}
+}
+
+% Example Block
+\setbeamertemplate{block example begin}
+{
+  \usebeamerfont{block body example}
+  \vskip-0.5em
+  \begin{beamercolorbox}[colsep*=2mm]{block example body}
+  \justifying
+  \begin{adjustwidth}{1ex}{1ex}
+  \setlength{\parskip}{1ex}
+  \vskip-2ex
+}
+\setbeamertemplate{block example end}
+{
+  \end{adjustwidth}
+  \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt
+  \vspace*{2ex}
+}
+
+
+\newenvironment<>{abstblock}[1]{%
+    \setbeamercolor{block title}{bg=alerted,fg=main}%
+    \setbeamercolor{block body}{bg=alerted,fg=main}%
+    \setbeamercolor{block separator}{bg=background}%
+    \begin{block}#2{#1}}{\end{block}}
+
+  % Footer
+\newcommand{\footercontent}[1]{\newcommand{\insertfootercontent}{#1}}
+
+\setbeamertemplate{footline}{
+  \ifdefined\insertfootercontent
+  \begin{beamercolorbox}[vmode]{headline}
+    \ifbeamercolorempty[bg]{headline rule}{}{
+      \begin{beamercolorbox}[wd=\paperwidth,colsep=0.25ex]{headline rule}\end{beamercolorbox}
+    }
+    \vspace{1.5ex}
+    \hspace{\sepwidth}
+    \usebeamerfont{footline}
+    \centering
+    \insertfootercontent
+    \hspace{\sepwidth}
+    \vspace{1.5ex}
+  \end{beamercolorbox}
+  \else\fi
+}

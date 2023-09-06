@@ -1,0 +1,65 @@
+% Gemini theme
+% https://github.com/anishathalye/gemini
+
+% ====================
+% Definitions
+% ====================
+
+% Colors from https://www.cam.ac.uk/brand-resources/guidelines/typography-and-colour/rgb-and-hex-references
+% \definecolor{nottblue}{RGB}{16, 38, 59}
+\definecolor{main}{RGB}{60, 55, 45}
+\definecolor{background}{RGB}{255, 250, 230}
+
+% Extra colors
+\definecolor{alerted}{RGB}{229, 195, 190}
+\definecolor{example}{RGB}{225, 240, 200}
+\definecolor{example_text_color}{RGB}{90, 115, 35}
+\definecolor{alerted_text_color}{RGB}{115, 35, 70}
+%\definecolor{lightgray}{RGB}{240, 240, 240}
+%\definecolor{lightorange}{RGB}{255, 245, 242}
+
+% ====================
+% Theme
+% ====================
+
+% Basic colors
+\setbeamercolor{background canvas}{bg=background!30}
+
+\setbeamercolor{palette primary}{fg=main,bg=background!30}
+\setbeamercolor{palette secondary}{fg=main,bg=background!30}
+\setbeamercolor{palette tertiary}{bg=main,fg=background!30}
+\setbeamercolor{palette quaternary}{fg=main,bg=background!30}
+\setbeamercolor{structure}{fg=main}
+
+\setbeamercolor{alerted text}{fg=alerted_text_color!70!red}
+
+% Headline
+\setbeamercolor{headline}{fg=background!30,bg=main}
+
+% Block
+\setbeamercolor{block title}{fg=main,bg=background!30}
+\setbeamercolor{block separator}{bg=main}
+\setbeamercolor{block body}{fg=main,bg=background!30}
+
+% Alert Block
+\setbeamercolor{block alerted title}{fg=main,bg=alerted!50}
+\setbeamercolor{block alerted separator}{bg=main}
+\setbeamercolor{block alerted body}{fg=main,bg=alerted!50}
+
+% Example Block
+\setbeamercolor{block example title}{fg=main,bg=example!50}
+\setbeamercolor{block example separator}{bg=main}
+\setbeamercolor{block example body}{fg=main,bg=example!50}
+
+% Heading
+\setbeamercolor{heading}{fg=main}
+
+% Itemize
+\setbeamercolor{item}{fg=main}
+
+% Bibliography
+\setbeamercolor{bibliography item}{fg=main}
+\setbeamercolor{bibliography entry author}{fg=main}
+\setbeamercolor{bibliography entry title}{fg=main}
+\setbeamercolor{bibliography entry location}{fg=main}
+\setbeamercolor{bibliography entry note}{fg=main}

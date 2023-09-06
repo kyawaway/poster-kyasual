@@ -1,0 +1,85 @@
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[orientation=portrait,size=a0,scale=1.0]{beamerposter}
+\usetheme{kyasual-ps}
+\usecolortheme{kyasual-ps}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+\usepackage{anyfontsize}
+
+\usepackage{ascmac}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{xpatch}
+\usepackage{realboxes}
+\usepackage{tcolorbox}
+\usepackage{MnSymbol}
+%\usepackage[sorting=none,url=false,doi=false]{biblatex}
+
+% ====================
+% Lengths
+% ====================
+
+% If you have N columns, choose \sepwidth and \colwidth such that
+% (N+1)*\sepwidth + N*\colwidth = \paperwidth
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\setlength{\sepwidth}{0.025\paperwidth}
+\setlength{\colwidth}{0.45\paperwidth}
+
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+%%%%%%%%%%%%%%%%%%%%
+% listing
+%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{listings}
+%\usepackage{source}
+%\lstset{%
+%	basicstyle={\small\ttfamily},
+%	commentstyle={\itshape},
+%	keywordstyle={\bfseries},
+%	ndkeywordstyle={},
+%	stringstyle={\ttfamily},
+%	frame={tb},
+%	breaklines=true,
+%	xrightmargin=0pt,
+%	xleftmargin=3pt,
+%	xleftmargin=2pt,
+%	numberstyle={\scriptsize},
+%	stepnumber=1,
+%	numbersep=1pt,
+%	lineskip=0.5ex,
+%	backgroundcolor=\color{black!3!white},
+%}
+
+%%%%%%%%%%%%%%%%%%%%
+% bib
+%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{bibliography entry article}{}
+\setbeamertemplate{bibliography entry title}{}
+\setbeamertemplate{bibliography entry location}{}
+\setbeamertemplate{bibliography entry note}{}
+\setbeamertemplate{bibliography entry journal}{}
+%\addbibresource{poster.bib}
+%\renewcommand\bibfont{\small}
+
+
+%%%%%%%%%%%%%%%%%%%%
+% newcommands
+%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\linpar}{\rotatebox[origin=c]{180}{$\&$}}
+
+
+%%%%%%%%%%%%%%%%%%%%
+% tikz
+%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tikz}
+\usetikzlibrary {arrows.meta}

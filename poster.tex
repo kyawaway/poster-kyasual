@@ -1,0 +1,98 @@
+\documentclass[final,14pt]{beamer}
+\usepackage{style}
+% ====================
+% Packages
+% ====================
+
+% ====================
+% Title
+% ====================
+
+\title{title}
+\subtitle{hoge}
+
+\author{Poster John \inst{1} \and Poster Bob \inst{2}}
+
+\institute[shortinst]{\inst{1} Poster Univ.}
+\institute[shortinst]{\inst{2} NicePoster Univ.}
+
+% ====================
+% Footer (optional)
+% ====================
+
+\footercontent{
+  \href{https://hogehoge.com/}{https://hogehoge.com/} \hfill
+  hogehoge2023, Japan  \hfill
+  \href{mailto:hogehoge@poster.com}{hogehoge@poster.com}}
+
+
+\begin{document}
+
+\begin{frame}[t]
+\begin{columns}[t]
+\separatorcolumn
+
+
+\begin{column}{\colwidth}
+
+  \begin{alertblock}{abst}
+    \begin{itemize}
+      \okitem abst1abstabstabstabstabst
+      \okitem abst2abstabstabstabstabst
+      \okitem abst3abstabstabstabstabst
+    \end{itemize}
+  \end{alertblock}
+
+
+  \begin{block}{1. block1}
+    block1
+  \end{block}
+  \begin{block}{2. block2}
+    block2\\
+      \vspace{1em}
+      \begin{beamercolorbox}[colsep*=0.5em]{block alerted body}
+      \usebeamerfont{block body}
+       \vspace{-0.5em}
+       \begin{itemize}
+           \exitem discuss!duscuss!discuss!discuss!discuss!
+       \end{itemize}
+      \end{beamercolorbox}
+  \end{block}
+
+\end{column}
+
+\separatorcolumn
+
+\begin{column}{\colwidth}
+
+  \begin{block}{3. block3} 
+    block3
+  \end{block}
+
+  \begin{block}{4. Conclusion}
+      \begin{itemize}
+          \okitem conclusion1
+          \okitem conclusion2
+          \exitem futurework
+      \end{itemize}
+  \end{block}
+ 
+  \vspace{-1em}
+
+  \begin{block}{References}
+
+    \nocite{*}
+    \footnotesize{\bibliographystyle{jplain}\bibliography{poster}}
+    %\printbibliography
+
+  \end{block}
+
+\end{column}
+\separatorcolumn
+
+
+
+\end{columns}
+\end{frame}
+
+\end{document}
